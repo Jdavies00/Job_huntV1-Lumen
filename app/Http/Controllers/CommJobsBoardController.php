@@ -31,7 +31,7 @@ class CommJobsBoardController extends Controller
         $input = $request->all();
         $job->title  = $input['title'];
         $job->save();
-        return response(['data' => $job, 'message' => 'Book Successfully Created!', 'status' => true]);
+        return response(['data' => $job, 'message' => 'Successfully Created!', 'status' => true]);
 
     }
 
@@ -57,6 +57,6 @@ class CommJobsBoardController extends Controller
         }
         
         $job->delete();
-        return response(['message' => 'Book was deleted', 'status' => false]);;
+        return response(['message' => 'job was deleted', 'status' => false]);;
     }
 }

@@ -36,4 +36,4 @@ $router->post('/register', 'UsersController@register');
 
 $router->get('/logout', 'UsersController@logout');
 
-$router->get('/dashboard','CommJobsBoardController@index');
+$router->get('/dashboard','MyJobsBoardController@index');

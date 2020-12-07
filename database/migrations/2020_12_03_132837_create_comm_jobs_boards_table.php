@@ -13,9 +13,15 @@ class CreateCommJobsBoardsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comm_jobs_boards', function (Blueprint $table) {
+        Schema::create('CommJobsBoard', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
+            $table->text('Job Title');
+            $table->text('Created By');
+            $table->text('CompanyName');//fk company id
+            // $table->boolean("Status");
+            $table->text('Link');
+            $table->double('Salary');
+            $table->text('Description');
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ class CreateCommJobsBoardsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comm_jobs_boards');
+        Schema::dropIfExists('CommJobsBoard');
     }
 }

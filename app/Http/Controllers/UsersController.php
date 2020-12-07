@@ -39,6 +39,6 @@ class UsersController extends Controller
         //logout user
         Auth::logout();
         // redirect to homepage
-        return redirect('/');
+        // return redirect('/');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MyJobsBoard;
 use Illuminate\Database\Seeder;
 
 class MyJobsBoardSeeder extends Seeder
@@ -13,6 +14,6 @@ class MyJobsBoardSeeder extends Seeder
      */
     public function run()
     {
-        //
+        MyJobsBoard::factory()->count(10)->create();
     }
 }
