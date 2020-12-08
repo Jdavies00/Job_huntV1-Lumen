@@ -34,7 +34,7 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('/logout', 'UsersController@logout');
 
     //AllJobs Board
-    $router->get('/allJobs','CommJobsBoardController@index');//read
+    $router->get('/llJobs','CommJobsBoardController@index');//read change to get alljobs
     $router->post('/allJobs','CommJobsBoardController@create');//create
 
     $router->get('/api/user', function (Request $request) {
