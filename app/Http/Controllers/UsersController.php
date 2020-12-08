@@ -35,10 +35,11 @@ class UsersController extends Controller
 
         return response(['data' => $data, 'message' => 'Account created successfully!', 'status' => true]);
     }  
-    public function logout (Request $request) {
-        //logout user
-        Auth::logout();
-        // redirect to homepage
-        // return redirect('/');
+    public function logout(Request $request){
+        $request->user()->token()->revoke();
+        $request->user()->token()->delete();
+        $response = 'You have been successfully logged out!';
+        return response($response, 200);
     }
+    
 }

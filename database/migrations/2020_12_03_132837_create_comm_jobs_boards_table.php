@@ -15,8 +15,8 @@ class CreateCommJobsBoardsTable extends Migration
     {
         Schema::create('CommJobsBoard', function (Blueprint $table) {
             $table->id();
-            $table->text('Job Title');
-            $table->text('Created By');
+            $table->text('JobTitle');
+            $table->text('CreatedBy');
             $table->text('CompanyName');//fk company id
             // $table->boolean("Status");
             $table->text('Link');

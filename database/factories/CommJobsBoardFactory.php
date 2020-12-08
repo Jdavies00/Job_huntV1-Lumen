@@ -25,9 +25,9 @@ class CommJobsBoardFactory extends Factory
     {
         return [
             
-            'Job Title'=>$this->faker->words($nd=2,$variableNbWords = true),
+            'JobTitle'=>$this->faker->words($nd=2,$variableNbWords = true),
             'Description'=> $this->faker->catchPhrase(),
-            'Created By'=> $this->faker->name,
+            'CreatedBy'=> $this->faker->name,
             'CompanyName'=> $this->faker->name,
             'Link'=> $this->faker->url,
             'Salary'=> $this->faker->numberBetween($min = 30000, $max = 80000) // 8567

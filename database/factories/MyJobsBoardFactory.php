@@ -27,10 +27,10 @@ class MyJobsBoardFactory extends Factory
     {
         return [
             
-            // 'Job Title'=>CommJobsBoard::all()->random
+            // 'JobTitle'=>CommJobsBoard::all()->random
             'Job_id'=> CommJobsBoard::all ()->random()->id,
             'Description'=> $this->faker->catchPhrase(),
-            'Created By'=> $this->faker->name,
+            'CreatedBy'=> $this->faker->name,
             'CompanyName'=> $this->faker->name,
             'Link'=> $this->faker->url,
             'Salary'=> $this->faker->numberBetween($min = 30000, $max = 80000) // 8567

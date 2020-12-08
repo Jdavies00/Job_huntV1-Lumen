@@ -17,9 +17,9 @@ class CreateMyJobsBoardsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('Job_id');
             $table->unsignedBigInteger('User_id')->nullable();
-            // $table->text('Job Title');
+            // $table->text('JobTitle');
             $table->text('Description');
-            $table->text('Created By');
+            $table->text('CreatedBy');
             $table->text('CompanyName');
             $table->text('Link');
             $table->text('Salary');
@@ -36,7 +36,7 @@ class CreateMyJobsBoardsTable extends Migration
             ->on('users')
             ->onDelete('cascade');
             
-            // $table->foreign('Job Title')
+            // $table->foreign('JobTitle')
             // ->references('id')
             // ->on('CommJobsBoard')
             // ->onDelete('cascade');
