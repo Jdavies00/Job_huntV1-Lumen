@@ -25,7 +25,14 @@ class CommJobsBoardFactory extends Factory
     {
         return [
             
-            'title'=>$this->faker->words($nd=2,$variableNbWords = true),
+            'JobTitle'=>$this->faker->words($nd=2,$variableNbWords = true),
+            'Description'=> $this->faker->catchPhrase(),
+            'CreatedBy'=> $this->faker->name,
+            'CompanyName'=> $this->faker->name,
+            'Link'=> $this->faker->url,
+            'Salary'=> $this->faker->numberBetween($min = 30000, $max = 80000) // 8567
+
+            // $this->faker->words($nd=2,$variableNbWords = true),
             // 'author'=> $this->faker->name,
             // // why 
             // // 'author_id' =>Author::all()->random()->id,

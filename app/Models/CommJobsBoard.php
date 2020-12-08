@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CommJobsBoard extends Model
 {
     use HasFactory;
-    protected $table = 'CommunityJobsBoard';
+    protected $table = 'CommJobsBoard';
     protected $primarayKey = 'id';
     public $incrementing = true;    
     public $timestamps = true;
