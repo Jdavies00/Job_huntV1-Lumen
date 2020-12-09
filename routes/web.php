@@ -32,6 +32,7 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->delete('/myJobsBoard/{id}','MyJobsBoardController@delete');//deletmyJobs by id
     // $router->post('/myJobsBoard','MyJobsBoardController@create')//amI creating or ADDING a job to myJobs Board
     
+    $router->get('/logout', 'UsersController@logout');
     //AllJobs Board
     $router->get('/llJobs','CommJobsBoardController@index');//read change to get alljobs
     $router->post('/allJobs','CommJobsBoardController@create');//create
@@ -41,7 +42,6 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
         return $user->toArray();
     });
 });
-$router->get('/logout', 'UsersController@logout');
 
 $router->post('/register', 'UsersController@register');
 
