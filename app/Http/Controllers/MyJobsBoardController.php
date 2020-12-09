@@ -31,7 +31,7 @@ class MyJobsBoardController extends Controller
         $input = $request->all();
         $job->title  = $input['title'];
         $job->save();
-        return response(['data' => $job, 'message' => 'Successfully Created!', 'status' => true]);
+        return response(['data' => $job, 'message' => 'Successfully Created!', 'status' => true,'jobs'=> $this->index()]);
 
     }
 
@@ -57,7 +57,7 @@ class MyJobsBoardController extends Controller
         }
         
         $job->delete();
-        return response(['message' => 'job was deleted', 'status' => false]);;
+        return response(['message' => 'job was deleted', 'status' => false, 'jobs'=> $this->index() ]);
     }
 }
 

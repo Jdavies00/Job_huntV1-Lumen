@@ -23,20 +23,28 @@ class CommJobsBoardController extends Controller
 
     public function create(Request $request)
     {
+        // if ($request->fails()) {
+        //     return response(['message' => 'Somthing went wrong', 'status' => false]);
+        // }
+
+        $job = new CommJobsBoard;
         if ($request->fails()) {
             return response(['message' => 'Somthing went wrong', 'status' => false]);
         }
 
         $job = new CommJobsBoard;
         $input = $request->all();
-        $job->JobTitle  = $input['JobTitle'];
-        $job->Description  = $input['Description'];
-        $job->CreatedBy  = $input['CreatedBy'];
-        $job->CompanyName  = $input['CompanyName'];
-        $job->Link  = $input['Link'];
-        $job->Salary  = $input['Salary'];
+        $job->title  = $input['title'];
         $job->save();
-        return response(['data' => $job, 'message' => 'Successfully Created!', 'status' => true]);
+        // $input = $request->all();
+        // $job->JobTitle  = request('jobName');
+        // $job->Description  = request('jobDescription');
+        // $job->CreatedBy  = request('jobCreatedBy');
+        // $job->CompanyName  = request('jobCompanyName');
+        // $job->Link  = request('jobLink');
+        // $job->Salary  = request('jobSalary');
+        // $job->save();
+        return response(['data' => $job, 'message' => 'Successfully Created!', 'status' => true,'jobs'=> $this->index()]);
 
     }
 
@@ -62,6 +70,6 @@ class CommJobsBoardController extends Controller
         }
         
         $job->delete();
-        return response(['message' => 'job was deleted', 'status' => false]);;
+        return response(['message' => 'job was deleted', 'status' => false ,'jobs'=> $this->index() ]);;
     }
 }
